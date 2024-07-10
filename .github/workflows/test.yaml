@@ -24,7 +24,11 @@ jobs:
 
       - name: Make all
         run: make all
+        env:
+          GO111MODULE: off
 
       - name: Make Test
         id: unit-test
         run: make test
+        env:
+          GO111MODULE: off
