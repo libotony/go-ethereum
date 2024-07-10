@@ -7,7 +7,7 @@ jobs:
   unit_tests:
     strategy:
       matrix:
-        go-version: [ 1.11.x ]
+        go-version: [ 1.10.x ]
         os: [ ubuntu-latest ]
     runs-on: ${{ matrix.os }}
     steps:
@@ -24,11 +24,7 @@ jobs:
 
       - name: Make all
         run: make all
-        env:
-          GO111MODULE: off
 
       - name: Make Test
         id: unit-test
         run: make test
-        env:
-          GO111MODULE: off
